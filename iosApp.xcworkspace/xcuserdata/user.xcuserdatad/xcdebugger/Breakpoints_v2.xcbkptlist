@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "E1230DA3-C2B6-4CDB-92F5-19A49A58F2C9"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4D95D193-0517-490A-B4D2-5BD9B7C6B6CA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosApp/MovieViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4D95D193-0517-490A-B4D2-5BD9B7C6B6CA - dabb3b87c8b5f86c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iosApp.MovieViewController.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "iosApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Desktop/DevelopX/iosApp/iosApp/MovieViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "1160">
+               </Location>
+               <Location
+                  uuid = "4D95D193-0517-490A-B4D2-5BD9B7C6B6CA - dabb3b87c8b5f86c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iosApp.MovieViewController.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "iosApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Desktop/DevelopX/iosApp/iosApp/MovieViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "1068">
+               </Location>
+               <Location
+                  uuid = "4D95D193-0517-490A-B4D2-5BD9B7C6B6CA - dabb3b87c8b5f82a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iosApp.MovieViewController.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "iosApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Desktop/DevelopX/iosApp/iosApp/MovieViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "1212">
+               </Location>
+               <Location
+                  uuid = "4D95D193-0517-490A-B4D2-5BD9B7C6B6CA - dabb3b87c8b5f82a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iosApp.MovieViewController.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "iosApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Desktop/DevelopX/iosApp/iosApp/MovieViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "1272">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
