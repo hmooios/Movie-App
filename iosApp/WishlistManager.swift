@@ -10,7 +10,7 @@ import RealmSwift
 class WishlistManager {
     
     static let shared = WishlistManager()
-    private let realm = try! Realm()
+     let realm = try! Realm()
     
     //MARK: - Add Wishlist Movie to Realm
     

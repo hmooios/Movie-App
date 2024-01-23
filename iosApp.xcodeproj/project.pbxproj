@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D67B7D64705FB8F556931AB /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485AD23E37265FB3EEE5F1EB /* Pods_iosApp.framework */; };
+		CE6BCC8E2B5E51BC00B85CF4 /* WishlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6BCC8D2B5E51BC00B85CF4 /* WishlistViewController.swift */; };
 		CE780AFA2B5548C1008A783E /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE780AF92B5548C1008A783E /* MovieDetailViewController.swift */; };
 		CE780AFC2B568B31008A783E /* MovieSuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE780AFB2B568B31008A783E /* MovieSuggestionViewController.swift */; };
 		CE780AFE2B569776008A783E /* MovieDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE780AFD2B569776008A783E /* MovieDetail.storyboard */; };
@@ -31,6 +32,7 @@
 		485AD23E37265FB3EEE5F1EB /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D1254A42FD65B74D2B90EB9 /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		82D28435BAD658E304FDC55A /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
+		CE6BCC8D2B5E51BC00B85CF4 /* WishlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewController.swift; sourceTree = "<group>"; };
 		CE780AF92B5548C1008A783E /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		CE780AFB2B568B31008A783E /* MovieSuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSuggestionViewController.swift; sourceTree = "<group>"; };
 		CE780AFD2B569776008A783E /* MovieDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MovieDetail.storyboard; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				CE86B1892B5924CE002F73C7 /* WishlistMovie.swift */,
 				CE86B18B2B592B71002F73C7 /* WishlistManager.swift */,
 				CEA303A82B4FF0BA0064CADE /* Main.storyboard */,
+				CE6BCC8D2B5E51BC00B85CF4 /* WishlistViewController.swift */,
 				CE780AF92B5548C1008A783E /* MovieDetailViewController.swift */,
 				CE780AFB2B568B31008A783E /* MovieSuggestionViewController.swift */,
 				CEA3D9A02B542A17002A7425 /* MovieViewController.swift */,
@@ -243,6 +246,7 @@
 				CE86B18C2B592B71002F73C7 /* WishlistManager.swift in Sources */,
 				CEA3D9A32B543A53002A7425 /* Movie.swift in Sources */,
 				CEA303A72B4FF0BA0064CADE /* ViewController.swift in Sources */,
+				CE6BCC8E2B5E51BC00B85CF4 /* WishlistViewController.swift in Sources */,
 				CE780AFC2B568B31008A783E /* MovieSuggestionViewController.swift in Sources */,
 				CE86B18A2B5924CF002F73C7 /* WishlistMovie.swift in Sources */,
 				CEA3D9A72B543DEC002A7425 /* Constant.swift in Sources */,
