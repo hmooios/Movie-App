@@ -9,7 +9,6 @@ import UIKit
 import PinterestLayout
 import AVFoundation
 
-
 class VideoViewController: UIViewController, UICollectionViewDataSource {
     var collectionView: UICollectionView!
     let fruitsArray = ["fruit1", "Rectangle307","Rectangle308","Rectangle313","Rectangle317","fruit2", "fruit3", "fruit4", "fruit5"]

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class SignUpViewController: UIViewController {
 
@@ -195,6 +196,7 @@ class SignUpViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
 
     let signInButton: GradientButton = {
         let gradientButton = GradientButton(type: .system)
@@ -223,6 +225,8 @@ class SignUpViewController: UIViewController {
         return view
     }()
     
+    //MARK: - Google SignIn Button
+    
     let googleSignInButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .white
@@ -249,6 +253,8 @@ class SignUpViewController: UIViewController {
         setupGestures()
         updateUnderlines()
         updateFadeLabel()
+      
+        
     }
     
     
@@ -311,7 +317,7 @@ class SignUpViewController: UIViewController {
 
     @objc func signupPressed(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let VC = storyboard.instantiateViewController(withIdentifier: "tabbar") as! tabbarViewController
+        let VC = storyboard.instantiateViewController(withIdentifier: "tabbar") as! TabbarViewController
         VC.modalPresentationStyle = .fullScreen
     //    UserStandards.isLogin = true
         self.present(VC, animated: true)
@@ -516,6 +522,8 @@ class SignUpViewController: UIViewController {
             rightLineView.heightAnchor.constraint(equalToConstant: 3)
         ])
         
+        //MARK: - Google SignIn Button
+        
         blackBackgroundView.addSubview(googleSignInButton)
         googleSignInButton.setImage(UIImage(named: "googleLogo")?.withRenderingMode(.alwaysOriginal), for: .normal)
         googleSignInButton.imageView?.contentMode = .scaleAspectFit
@@ -526,7 +534,10 @@ class SignUpViewController: UIViewController {
             googleSignInButton.heightAnchor.constraint(equalToConstant: 50),
             googleSignInButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
             
+            
         ])
+        googleSignInButton.addTarget(self, action: #selector(googleButtonTapped), for: .touchUpInside)
+
         
         // Add Apple sign-in button next to the Google round button
         blackBackgroundView.addSubview(appleSignInButton)
@@ -548,6 +559,46 @@ class SignUpViewController: UIViewController {
         print("Forgot your password? button tapped!")
         // Add your logic for handling forgotten passwords, such as showing a reset password screen
     }
+    
+    @objc private func googleButtonTapped(){
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { (signInResult: GIDSignInResult?, error: Error?) in
+               guard error == nil else {
+                   print("Google Sign-In error: \(error!.localizedDescription)")
+                   return
+               }
+
+            // If sign in succeeded, display the app's main content View.
+            guard let signInResult = signInResult else { return }
+            let user = signInResult.user
+            
+            let emailAddress = user.profile?.email
+            let fullName = user.profile?.name
+            let familyName = user.profile?.familyName
+            let profilePicUrl = user.profile?.imageURL(withDimension: 320)
+            let authenticationToken = signInResult.user.accessToken.tokenString
+            
+//           let authenticationToken = signInResult.authentication!.idToken
+            
+
+            print(fullName, emailAddress, familyName, profilePicUrl)
+            print("Authentication Token ",authenticationToken)
+            
+            // Save user information to UserDefaults
+                 let defaults = UserDefaults.standard
+                 defaults.set(emailAddress, forKey: "userEmail")
+                 defaults.set(fullName, forKey: "userFullName")
+                 defaults.set(familyName, forKey: "userFamilyName")
+                 defaults.set(profilePicUrl?.absoluteString, forKey: "userProfilePicUrl")
+                defaults.set(authenticationToken, forKey: "userAuthToken") // Save the authentication token
+                 defaults.synchronize() // Make sure to synchronize the UserDefaults
+                        
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let VC = storyboard.instantiateViewController(withIdentifier: "tabbar") as! TabbarViewController
+            VC.modalPresentationStyle = .overFullScreen // Change the modalPresentationStyle
+            self.present(VC, animated: true, completion: nil)
+            
+        }
+    }
 
 
     private func updateUnderlineViewPosition(for label: UILabel) {
@@ -564,10 +615,10 @@ class SignUpViewController: UIViewController {
         print("Sign In button tapped!")
     }
     
-
-
 }
-class tabbarViewController:UITabBarController{
+
+
+class TabbarViewController:UITabBarController{
     override func viewDidLoad() {
         self.selectedIndex = 2
     }

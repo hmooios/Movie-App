@@ -26,6 +26,7 @@
 		CEA3D9A32B543A53002A7425 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3D9A22B543A53002A7425 /* Movie.swift */; };
 		CEA3D9A52B543D1D002A7425 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3D9A42B543D1D002A7425 /* NetworkManager.swift */; };
 		CEA3D9A72B543DEC002A7425 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3D9A62B543DEC002A7425 /* Constant.swift */; };
+		CEBA86F72B6CCC03007D81A4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBA86F62B6CCC03007D81A4 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		CEA3D9A22B543A53002A7425 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		CEA3D9A42B543D1D002A7425 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CEA3D9A62B543DEC002A7425 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		CEBA86F62B6CCC03007D81A4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				CE86B18B2B592B71002F73C7 /* WishlistManager.swift */,
 				CEA303A82B4FF0BA0064CADE /* Main.storyboard */,
 				CE6BCC8D2B5E51BC00B85CF4 /* WishlistViewController.swift */,
+				CEBA86F62B6CCC03007D81A4 /* ProfileViewController.swift */,
 				CE780AF92B5548C1008A783E /* MovieDetailViewController.swift */,
 				CE780AFB2B568B31008A783E /* MovieSuggestionViewController.swift */,
 				CEA3D9A02B542A17002A7425 /* MovieViewController.swift */,
@@ -145,6 +148,8 @@
 			dependencies = (
 			);
 			name = iosApp;
+			packageProductDependencies = (
+			);
 			productName = iosApp;
 			productReference = CEA3039F2B4FF0BA0064CADE /* iosApp.app */;
 			productType = "com.apple.product-type.application";
@@ -173,6 +178,8 @@
 				Base,
 			);
 			mainGroup = CEA303962B4FF0BA0064CADE;
+			packageReferences = (
+			);
 			productRefGroup = CEA303A02B4FF0BA0064CADE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -255,6 +262,7 @@
 				CEA3D9A52B543D1D002A7425 /* NetworkManager.swift in Sources */,
 				CE780AFA2B5548C1008A783E /* MovieDetailViewController.swift in Sources */,
 				CEA303A52B4FF0BA0064CADE /* SceneDelegate.swift in Sources */,
+				CEBA86F72B6CCC03007D81A4 /* ProfileViewController.swift in Sources */,
 				CE9C2C632B5148B100DFB7F8 /* SignUpViewController.swift in Sources */,
 				CEA3D9A12B542A17002A7425 /* MovieViewController.swift in Sources */,
 			);

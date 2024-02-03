@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -369,17 +370,65 @@
             </objects>
             <point key="canvasLocation" x="-1503" y="770"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="cNz-lR-CZT">
             <objects>
-                <viewController id="Inp-J3-bOw" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profileViewController" id="Inp-J3-bOw" customClass="ProfileViewController" customModule="iosApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mxV-5C-NPe">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6RI-yx-J1p">
+                                <rect key="frame" x="76" y="89" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="L4N-VD-EsO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiZ-MI-cvF">
+                                <rect key="frame" x="10" y="359" width="373" height="21.333333333333314"/>
+                                <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIf-4F-rso">
+                                <rect key="frame" x="10" y="400.33333333333331" width="373" height="21.333333333333314"/>
+                                <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5h-iE-kT3">
+                                <rect key="frame" x="152" y="450" width="90" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign Out">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="signoutButtonTapped:" destination="Inp-J3-bOw" eventType="touchUpInside" id="p5n-lO-m9s"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="wv2-Rj-kAc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gIf-4F-rso" firstAttribute="leading" secondItem="wv2-Rj-kAc" secondAttribute="leading" constant="10" id="2Yk-30-Gql"/>
+                            <constraint firstItem="wv2-Rj-kAc" firstAttribute="trailing" secondItem="6RI-yx-J1p" secondAttribute="trailing" constant="77" id="Fef-2E-T9G"/>
+                            <constraint firstItem="wv2-Rj-kAc" firstAttribute="trailing" secondItem="yiZ-MI-cvF" secondAttribute="trailing" constant="10" id="Fxl-2m-J1U"/>
+                            <constraint firstItem="yiZ-MI-cvF" firstAttribute="leading" secondItem="wv2-Rj-kAc" secondAttribute="leading" constant="10" id="G2u-At-leg"/>
+                            <constraint firstItem="yiZ-MI-cvF" firstAttribute="top" secondItem="6RI-yx-J1p" secondAttribute="bottom" constant="30" id="G5w-YX-RfW"/>
+                            <constraint firstItem="6RI-yx-J1p" firstAttribute="leading" secondItem="wv2-Rj-kAc" secondAttribute="leading" constant="76" id="OsM-OM-r58"/>
+                            <constraint firstItem="wv2-Rj-kAc" firstAttribute="trailing" secondItem="gIf-4F-rso" secondAttribute="trailing" constant="10" id="UwL-ms-rJ4"/>
+                            <constraint firstItem="6RI-yx-J1p" firstAttribute="top" secondItem="wv2-Rj-kAc" secondAttribute="top" constant="30" id="YbZ-rn-CCN"/>
+                            <constraint firstItem="gIf-4F-rso" firstAttribute="top" secondItem="yiZ-MI-cvF" secondAttribute="bottom" constant="20" id="k83-M9-2eF"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="User 24px" id="cf2-KU-kdS"/>
+                    <connections>
+                        <outlet property="email" destination="gIf-4F-rso" id="bnV-UB-dgH"/>
+                        <outlet property="profileImage" destination="6RI-yx-J1p" id="Oml-It-L1G"/>
+                        <outlet property="username" destination="yiZ-MI-cvF" id="UGM-FN-XZY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZo-ca-sGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -419,7 +468,7 @@
         <!--Tabbar View Controller-->
         <scene sceneID="J08-EB-diQ">
             <objects>
-                <tabBarController storyboardIdentifier="tabbar" id="Orn-5x-wlq" customClass="tabbarViewController" customModule="iosApp" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabbar" id="Orn-5x-wlq" customClass="TabbarViewController" customModule="iosApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="owW-c0-gkR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -717,8 +766,8 @@ Provide accessibility information and localized strings.</string>
         <image name="Masonry" width="26" height="26.333333969116211"/>
         <image name="User 24px" width="26.333333969116211" height="26.333333969116211"/>
         <image name="fruit1" width="225" height="225"/>
-        <image name="heart" width="26" height="26"/>
         <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="heart" width="26" height="26"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="imageView:HTN-9g-Q9p:image" width="173" height="230">
             <mutableData key="keyedArchiveRepresentation">
@@ -38129,6 +38178,9 @@ AAAAAAAAAAAAAAAAACI8pA
 </mutableData>
         </image>
         <image name="trash.fill" catalog="system" width="117" height="128"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

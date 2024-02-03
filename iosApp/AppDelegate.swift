@@ -6,15 +6,53 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     var window: UIWindow?
+    
+    func application(_ app: UIApplication, open url: URL,
+              options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+      var handled: Bool
+
+      handled = GIDSignIn.sharedInstance.handle(url)
+      if handled {
+        return true
+      }
+
+      // Handle other custom URL types.
+
+      // If not handled by this app, return false.
+      return false
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Check if a valid token exists
+        if let token = UserDefaults.standard.string(forKey: "userAuthToken") {
+            // Perform an auto-login with the token
+            // If successful, navigate to TabbarViewController
+            // If not, show the login screen
+            print("Token found")
+           
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                       let tabbarVC = storyboard.instantiateViewController(withIdentifier: "tabbar") as! TabbarViewController
+                       tabbarVC.modalPresentationStyle = .overFullScreen
+                       self.window?.rootViewController = tabbarVC
+            
+            
+        } else {
+            // No token found, show the login screen
+            print("No Token found")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                      let signUpVC = storyboard.instantiateViewController(withIdentifier: "signup") as! SignUpViewController
+                      signUpVC.modalPresentationStyle = .fullScreen
+                      self.window?.rootViewController = signUpVC
+
+        }
         return true
     }
 

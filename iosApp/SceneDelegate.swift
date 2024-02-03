@@ -15,18 +15,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        let story = UIStoryboard(name: "Main", bundle: nil)
-        
-        let signupVC = story.instantiateViewController(withIdentifier: "signup") as! SignUpViewController
-        window?.rootViewController = signupVC
+
         
         // Assuming you want to show the signupVC only for users who are not logged in.
-        let isLogin = UserStandards.isLogin ?? false
-        
-        if isLogin {
+
+        let story = UIStoryboard(name: "Main", bundle: nil)
+
+        if let isSignIn = UserDefaults.standard.string(forKey: "userAuthToken") {
             // If the user is already logged in, you can set your tab bar controller as the root view.
-            let tabbarVC = story.instantiateViewController(withIdentifier: "tabbar") as! tabbarViewController
+            let tabbarVC = story.instantiateViewController(withIdentifier: "tabbar") as! TabbarViewController
             window?.rootViewController = tabbarVC
+           
+        } else {
+
+            let signupVC = story.instantiateViewController(withIdentifier: "signup") as! SignUpViewController
+            window?.rootViewController = signupVC
+           
         }
         
         window?.makeKeyAndVisible()
